@@ -230,7 +230,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           new Row(children: <Widget>[
             Padding(
               padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-              child: new Text('Product brand',
+              child: new Text('Product brand 444',
                   style: TextStyle(color: Colors.grey)),
             ),
             Padding(
