@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 
 import 'package:commerce/components/horizontal_listview.dart';
+import "package:commerce/pages/cart.dart";
 
 void main() {
   runApp(MaterialApp(
@@ -57,7 +58,10 @@ class _HomePageState extends State<HomePage> {
                 Icons.shopping_cart,
                 color: Colors.white,
               ),
-              onPressed: () {}),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => new Cart()));
+              }),
         ],
       ),
       drawer: new Drawer(
@@ -83,35 +87,53 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('Home Page'),
-                leading: Icon(Icons.home),
+                leading: Icon(
+                  Icons.home,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('My Account'),
-                leading: Icon(Icons.person),
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('My Orders'),
-                leading: Icon(Icons.shopping_basket),
+                leading: Icon(
+                  Icons.shopping_basket,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => new Cart())));
+              },
               child: ListTile(
-                title: Text('Categories'),
-                leading: Icon(Icons.dashboard),
+                title: Text('Shoping Cart'),
+                leading: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('Favorites'),
-                leading: Icon(Icons.favorite),
+                leading: Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                ),
               ),
             ),
             Divider(),
