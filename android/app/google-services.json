@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "516639297017",
+    "project_id": "commerce-8bfaf",
+    "storage_bucket": "commerce-8bfaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516639297017:android:6a6b3ad1aaeba322fc4128",
+        "android_client_info": {
+          "package_name": "com.anatoly.commerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs-k5KAm3Dri1vdb6KlpYa6Xgcnn4Jsmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516639297017:android:574af69da9f68acffc4128",
+        "android_client_info": {
+          "package_name": "com.example.commerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs-k5KAm3Dri1vdb6KlpYa6Xgcnn4Jsmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

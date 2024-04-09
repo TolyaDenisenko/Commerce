@@ -10,7 +10,8 @@ class HorizontalList extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          Category(image_location: 'images/cats/c1.png', image_caption: 'c1'),
+          Category(
+              image_location: 'images/cats/c1.png', image_caption: 't-shirt'),
           Category(image_location: 'images/cats/c2.png', image_caption: 'c2'),
           Category(image_location: 'images/cats/c3.png', image_caption: 'c3'),
           Category(image_location: 'images/cats/c4.png', image_caption: 'c4'),
@@ -39,7 +40,7 @@ class Category extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: Container(
-          width: 100.0,
+          width: 80.0,
           child: ListTile(
             title: Image.asset(
               image_location,
