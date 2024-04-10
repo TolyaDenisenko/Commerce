@@ -91,10 +91,11 @@ class _AutorizationPageState extends State<AutorizationPage> {
         padding: EdgeInsets.only(top: 100),
         child: Container(
           child: Align(
+            alignment: Alignment.center,
             child: Text(
               'Ecommerce Market',
               style: TextStyle(
-                  fontSize: 45, fontWeight: FontWeight.bold, color: Colors.red),
+                  fontSize: 25, fontWeight: FontWeight.bold, color: Colors.red),
             ),
           ),
         ),
@@ -108,15 +109,17 @@ class _AutorizationPageState extends State<AutorizationPage> {
         child: TextField(
           controller: controller,
           obscureText: obscure,
-          style: TextStyle(fontSize: 20, color: Colors.white),
+          style: TextStyle(
+              fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
           decoration: InputDecoration(
               hintStyle: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
-                  color: Colors.white30),
+                  color: Color.fromARGB(255, 255, 255, 255)),
               hintText: hint,
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white, width: 3)),
+                  borderSide: BorderSide(
+                      color: Color.fromARGB(255, 255, 255, 255), width: 3)),
               enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.white54, width: 1)),
               prefixIcon: Padding(
