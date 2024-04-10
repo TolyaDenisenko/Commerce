@@ -5,6 +5,12 @@ import 'package:another_carousel_pro/another_carousel_pro.dart';
 
 import 'package:commerce/components/horizontal_listview.dart';
 import "package:commerce/pages/cart.dart";
+import "package:commerce/pages/login.dart";
+import "package:firebase_auth/firebase_auth.dart";
+import "package:google_sign_in/google_sign_in.dart";
+import "package:cloud_firestore/cloud_firestore.dart";
+import "./home.dart";
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -142,7 +148,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                AuthService().logOut();
+              },
               child: ListTile(
                 title: Text('About'),
                 leading: Icon(
