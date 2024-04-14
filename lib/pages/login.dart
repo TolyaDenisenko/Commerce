@@ -240,6 +240,11 @@ class _AutorizationPageState extends State<AutorizationPage> {
         backgroundColor: Color.fromRGBO(254, 254, 254, 0.8),
         body: Column(
           children: <Widget>[
+            Image.asset(
+              'images/m3.jpg',
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ),
             _logo(),
             (showLogin
                 ? Column(
