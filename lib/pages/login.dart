@@ -1,4 +1,6 @@
+import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
+import "package:flutter/widgets.dart";
 import "package:shared_preferences/shared_preferences.dart";
 import "package:fluttertoast/fluttertoast.dart";
 import "package:firebase_auth/firebase_auth.dart";
@@ -26,6 +28,7 @@ class AuthService {
       //Authresult stal UserCredential
       UserCredential result = await _fAuth.signInWithEmailAndPassword(
           email: email, password: password);
+
       User? user = result.user;
       return AuthUser.fromFirebase(user!);
     } on FirebaseException catch (e) {
@@ -47,6 +50,12 @@ class AuthService {
       UserCredential result = await _fAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
+      var myData = {'Name': email, 'password': password};
+      FirebaseFirestore.instance
+          .collection('UserId')
+          .add({'userid': email, 'password': password}).then(
+              (value) => print('User add database'));
+
       return AuthUser.fromFirebase(user!);
     } on FirebaseException catch (e) {
       print(e);
@@ -83,20 +92,18 @@ class _AutorizationPageState extends State<AutorizationPage> {
   AuthService _authServise = AuthService();
 
   AuthService _authService = AuthService();
-
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     Widget _logo() {
       return Padding(
         padding: EdgeInsets.only(top: 100),
         child: Container(
-          child: Align(
-            alignment: Alignment.center,
-            child: Text(
-              'Ecommerce Market',
-              style: TextStyle(
-                  fontSize: 25, fontWeight: FontWeight.bold, color: Colors.red),
-            ),
+          alignment: Alignment.topCenter,
+          child: Text(
+            'Ecommerce Market',
+            style: TextStyle(
+                fontSize: 25, fontWeight: FontWeight.bold, color: Colors.red),
           ),
         ),
       );
@@ -152,6 +159,9 @@ class _AutorizationPageState extends State<AutorizationPage> {
       return Container(
           child: Column(
         children: <Widget>[
+          SizedBox(
+            height: 150.0,
+          ),
           Padding(
               padding: EdgeInsets.only(bottom: 20, top: 10),
               child:
@@ -237,15 +247,21 @@ class _AutorizationPageState extends State<AutorizationPage> {
     // }
 
     return Scaffold(
-        backgroundColor: Color.fromRGBO(254, 254, 254, 0.8),
-        body: Column(
+        backgroundColor: Colors.black,
+        body: Stack(
           children: <Widget>[
-            Image.asset(
-              'images/m3.jpg',
-              fit: BoxFit.cover,
-              width: double.infinity,
+            Opacity(
+              opacity: 0.5,
+              child: Image.asset(
+                'images/m3.jpg',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
+                alignment: Alignment.center,
+              ),
             ),
             _logo(),
+
             (showLogin
                 ? Column(
                     children: <Widget>[
